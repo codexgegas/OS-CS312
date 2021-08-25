@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Program to check armstrong number"
 echo "Enter a number: "
 read c
