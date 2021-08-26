@@ -1,32 +1,12 @@
 #!/bin/bash
-echo "Program to check armstrong number"
-echo "Enter a number: "
-read c
-function armstrong {
-x=$1
-sum=0
-r=0
-n=0
-l=${#x}
-while [ $x -gt 0 ]
+echo  "Enter number: "
+read num
+for((i=2; i<=num/2; i++))
 do
-r=`expr $x % 10`
-
-n=$(bc <<< "$r^$l")
-
-sum=`expr $sum + $n`
-
-x=`expr $x / 10`
+  if [ $((num%i)) -eq 0 ]
+  then
+    echo "$num is not a prime number."
+    exit
+  fi
 done
-
-if [ $sum -eq $c ]
-then
-echo "It is an Armstrong Number."
-else
-echo "It is not an Armstrong Number."
-fi
-
-}
-
-result=`armstrong $c`
-echo $result
+echo "$num is a prime number."
