@@ -1,12 +1,12 @@
 #!/bin/bash
-n=$1
-rev=0
-tmp=0
-
+echo enter number
+read n
+num=0
 while [ $n -gt 0 ]
 do
-tmp=`expr $n % 10`
-rev=`expr $rev \* 10 + $tmp`
-n=`expr $n / 10`
+num=$(expr $num \* 10)
+k=$(expr $n % 10)
+num=$(expr $num + $k)
+n=$(expr $n / 10)
 done
-echo "reverse no is $rev"
+echo number is $num
