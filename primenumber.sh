@@ -1,16 +1,23 @@
-#!bin/bash
-function prime()
-{
-    for((i=2; i<=num; i++))
-    do
-        if [ `expr $num % $i` == 0 ]
-        then
-            echo $num is not prime
-            exit
-        fi
-    done
-    echo $num is a prime number
-}
+echo "enter the number"
+read number
+i=2
+  
 
-read num;
-prime "$num";
+f=0
+  
+while test $i -le `expr $number / 2` 
+do
+  
+if test `expr $number % $i` -eq 0 
+then
+f=1
+fi
+  
+i=`expr $i + 1`
+done
+if test $f -eq 1 
+then
+echo "Not Prime"
+else
+echo "Prime"
+fi
